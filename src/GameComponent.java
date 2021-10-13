@@ -19,7 +19,7 @@ import java.util.TimerTask;
 
 public class GameComponent extends JComponent {
 	
-	private ArrayList<Guy> hero = new ArrayList<Guy>();
+	private ArrayList<Hero> hero = new ArrayList<Hero>();
 	private ArrayList<Alien> aliens = new ArrayList<Alien>();
 	private ArrayList<Plane> planes = new ArrayList<Plane>();
 	private ArrayList<Bullet> heroBullets = new ArrayList<Bullet>();
@@ -27,7 +27,7 @@ public class GameComponent extends JComponent {
 	//private Timer timer;
 	
 	public GameComponent() {
-		hero.add(new Guy());
+		hero.add(new Hero());
 		aliens.add(new Alien(300,300));
 		aliens.add(new Alien(300,400));
 		aliens.add(new Alien(300,500));
@@ -56,7 +56,7 @@ public class GameComponent extends JComponent {
 			System.out.println("io error");
 		}
 		
-		this.drawGuy(g2);
+		this.drawHeros(g2);
 		this.drawAliens(g2);
 		this.drawPlanes(g2);
 		this.drawHeroBullets(g2);
@@ -64,7 +64,7 @@ public class GameComponent extends JComponent {
 		
 	}
 	
-	public void drawGuy(Graphics2D g2) {
+	public void drawHeros(Graphics2D g2) {
 		for (int i = 0; i < hero.size(); i++)
 			hero.get(i).drawOn(g2);
 	}
@@ -147,7 +147,7 @@ public class GameComponent extends JComponent {
 	
 	public void updateHeroLife() {
 		for (int i = 0; i < hero.size(); i++) {
-			Guy h = hero.get(i);
+			Hero h = hero.get(i);
 			for (int j = 0; j < aliens.size(); j++) {
 				if (ifCollide(h, aliens.get(j))) {
 					h.die();
@@ -166,7 +166,7 @@ public class GameComponent extends JComponent {
 		return this.heroBullets;
 	}
 	
-	public Guy getHero(int i) {
+	public Hero getHero(int i) {
 		return hero.get(i);
 	}
 	 

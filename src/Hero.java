@@ -10,7 +10,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class Guy extends Collidable{
+public class Hero extends Collidable{
 	
 	public static int length = 25;
 	public static int height = 50;
@@ -20,13 +20,13 @@ public class Guy extends Collidable{
 	private int facing;
 	private int life;
 	
-	public Guy() {
+	public Hero() {
 		super(100, 100, length, height);
 		this.facing = 1;
 		life = 3;
 	}
 	
-	public Guy(int x, int y) {
+	public Hero(int x, int y) {
 		super(x, y, length, height);
 		this.facing = 1;
 		life = 3;

@@ -44,12 +44,12 @@ public class MovementListener implements KeyListener {
 				 
 				 if(commands.contains('l')) {
 					 if (JC.getHero(0).getFacing() == 1) {
-						 JC.getHeroBullets().add(new Bullet(JC.getHero(0).getX() + Guy.length + 10,
-								 JC.getHero(0).getY() + Guy.height / 2,
+						 JC.getHeroBullets().add(new Bullet(JC.getHero(0).getX() + Hero.length + 10,
+								 JC.getHero(0).getY() + Hero.height / 2,
 								 1));
 					 } else {
 						 JC.getHeroBullets().add(new Bullet(JC.getHero(0).getX() - Bullet.length - 10, 
-								 JC.getHero(0).getY() + Guy.height / 2,
+								 JC.getHero(0).getY() + Hero.height / 2,
 								 -1));
 					 }
 					 
@@ -65,11 +65,11 @@ public class MovementListener implements KeyListener {
 		this.timer.start();
 	}
 	
-	public boolean isOnPlane(Guy hero) {
+	public boolean isOnPlane(Hero hero) {
 		
 		for (int i = 0; i < JC.getPlanes().size(); i++) {
-			if (hero.getY() + Guy.height == JC.getPlanes().get(i).getY()
-					&& hero.getX() + Guy.length >= JC.getPlanes().get(i).getX()
+			if (hero.getY() + Hero.height == JC.getPlanes().get(i).getY()
+					&& hero.getX() + Hero.length >= JC.getPlanes().get(i).getX()
 					&& hero.getX() <= JC.getPlanes().get(i).getX() + Plane.length) {
 				return true;
 			}
