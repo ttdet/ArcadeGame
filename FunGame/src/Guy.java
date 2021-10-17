@@ -35,13 +35,14 @@ public class Guy extends Collidable{
 	
 	public void drawOn(Graphics2D g2) {
 		
-		ImageIcon img = new ImageIcon("C:\\Users\\localmgr\\eclipse-workspace\\FunGame\\hero.png");
+		ImageIcon img = new ImageIcon("..\\hero.png");
 		g2.translate(getX(), getY());
 		try {
-			Image image = ImageIO.read(new FileInputStream("C:\\Users\\localmgr\\eclipse-workspace\\FunGame\\hero2.png"));
+			Image image = ImageIO.read(new FileInputStream("..\\hero2.png"));
 			g2.drawImage(image, 0, 0, Color.cyan, null);
 			
 		} catch (IOException e) {
+//			e.printStackTrace();
 			System.out.println("io error");
 		}
 		
